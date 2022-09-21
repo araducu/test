@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<testCase version="9.0.0.202205111908">
+    <general>
+        <language>Python</language>
+    </general>
+    <testbed>project://SR_wireshark/new_topology.tbml</testbed>
+    <procedures>
+        <item name="main">
+            <steps>
+                <item guid="69dc7f05-4c23-4700-9fa8-68ac02ab3cfa" action="eval" useFieldsInCommand="false">
+                    <command>
+                        <body>session=&quot;cUNCCGWSMFVAL01GX01;2215914785;691;1660968457&quot;</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="13c9c0c8-a55b-4416-b1a5-b8a3bd4e4229" action="open" session="s1">
+                    <command>
+                        <body>device:pc1#test</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.OpenStepPropertyGroup">
+                        <stepProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        <sessionProperties type="com.fnfr.svt.applications.wireshark.WiresharkSessionProperties">
+                            <sessionbuilderInitializeAction type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </sessionProperties>
+                        <sessionClass type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        <sessionVersion type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                    </applicationProperties>
+                </item>
+                <item guid="0de31ae5-10c7-4b5f-9efe-ea2e4a8b7e65" action="command" session="s1">
+                    <command>
+                        <body>capture load project://SR_wireshark/sr-test.cap</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="16272529-a3e0-4aeb-a7ae-63c9b526865f" action="command" session="s1">
+                    <command>
+                        <body>query load project://SR_wireshark/sr-test.cap</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="46cc7546-c36a-4180-835e-ec7e79016b9c" action="command" session="s1">
+                    <command>
+                        <body>query decode</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="23a464e2-1fa8-4c92-80fd-315c8f5b6e9e" action="command" session="s1">
+                    <command>
+                        <body>query filter set diameter.applicationId &amp;&amp; diameter.Session-Id == \\&quot;[session]\\&quot;</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="416cc262-d4da-4a4f-8729-cbfd7d52d7f8" action="command" session="s1">
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="35bcddf4-8fc2-475f-b1c5-16da599e22d9" action="command" session="s1">
+                    <command>
+                        <body>query decode</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="1976d38e-6bb1-476d-b9e8-9d586e14009d" action="close" session="s1" useFieldsInCommand="false">
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+            </steps>
+        </item>
+    </procedures>
+</testCase>

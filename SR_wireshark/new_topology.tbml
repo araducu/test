@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbml xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.teslaalliance.org/trs/tbml/1.0/tbml-core.xsd" xmlns="http://www.teslaalliance.org/trs/tbml/1.0">
+  <header>
+    <name>new_topology</name>
+    <description></description>
+    <property name="author">AlRaducu</property>
+    <property name="dateCreated">2022-09-16T15:50:20.130+03:00</property>
+    <property name="notes"/>
+    <property name="dateModified">2022-09-16T15:50:46.051+03:00</property>
+    <property name="creationTool" vendor="com.fnfr">com.fnfr.itest.topology.tbml.diagram</property>
+    <property name="creationToolVersion" vendor="com.fnfr">8.7.0.202110210950</property>
+  </header>
+  <body>
+    <resources>
+      <resource guid="2ca9c742-91a2-4a18-a544-0c2611dd3c74" id="resource_0" type="pc">
+        <boundary height="100" width="100" x="495" y="289"/>
+        <property name="iconURI">platform:/plugin/com.fnfr.itest.topology.tbml.edit/icons/full/topology/pc_32.gif</property>
+        <property name="name">pc1</property>
+        <property name="inventoryName"></property>
+        <extensions type="com.fnfr.itest.session" xs:namespace="com.fnfr.itest.session">
+          <session baseSessionProfile="" name="test" provider="com.fnfr">
+            <sessionProfile version="8.7.0.202112151246">
+              <baseApplication>com.fnfr.svt.applications.wireshark</baseApplication>
+              <sessionProperties type="com.fnfr.svt.applications.wireshark.WiresharkSessionProperties">
+                <interfaceName inherit="false">Wi-Fi</interfaceName>
+                <sessionbuilderInitializeAction type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+              </sessionProperties>
+              <language>Python</language>
+            </sessionProfile>
+            <isInherited>false</isInherited>
+            <isDisabled>false</isDisabled>
+          </session>
+        </extensions>
+      </resource>
+    </resources>
+    <connectivity/>
+  </body>
+  <illustration>
+    <layer/>
+  </illustration>
+</tbml>
